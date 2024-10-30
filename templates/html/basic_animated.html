@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs Template - Basic Animated Toggle</title>
+    <link href="../css/main.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-3xl mx-auto py-16">
+    <h2 class="text-2xl font-bold mb-8">FAQ</h2>
+    <div class="divide-y divide-gray-200">
+      <!-- FAQ Item 1 -->
+      <div>
+        <button
+          class="w-full text-left py-4"
+          onclick="toggleFAQItem(1)"
+        >
+          <div class="flex justify-between items-center">
+            <span class="text-xl font-medium">How do I track my order?</span>
+            <svg
+              id="arrow-1"
+              class="w-6 h-6 text-gray-500 transform transition-transform duration-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 9l-7 7-7-7"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </button>
+        <div
+          id="faq-content-1"
+          class="overflow-hidden max-h-0 transition-all duration-500"
+        >
+          <p class="p-4 text-gray-600">
+            Once your order has been shipped, you will receive an email with the
+            tracking information...
+          </p>
+        </div>
+      </div>
+  
+      <!-- FAQ Item 2 -->
+      <div>
+        <button
+          class="w-full text-left py-4"
+          onclick="toggleFAQItem(2)"
+        >
+          <div class="flex justify-between items-center">
+            <span class="text-xl font-medium">
+              What payment methods are accepted?
+            </span>
+            <svg
+              id="arrow-2"
+              class="w-6 h-6 text-gray-500 transform transition-transform duration-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 9l-7 7-7-7"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </button>
+        <div
+          id="faq-content-2"
+          class="overflow-hidden max-h-0 transition-all duration-500"
+        >
+          <p class="p-4 text-gray-600">
+            We accept Visa, MasterCard, American Express, and PayPal...
+          </p>
+        </div>
+      </div>
+  
+      <!-- Add more items as needed -->
+    </div>
+  </div>        
+    
+      <script>
+        function toggleFAQItem(id) {
+          const content = document.getElementById(`faq-content-${id}`);
+          const arrow = document.getElementById(`arrow-${id}`);
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+          }
+        }
+      </script>
+</body>
+</html>
